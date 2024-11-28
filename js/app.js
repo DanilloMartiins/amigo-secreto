@@ -4,6 +4,11 @@ function adicionar() {
     let amigo = document.getElementById('nome-amigo');
     let nome = amigo.value.trim(); // Remover espaços em branco
 
+    if (listadeAmigos.includes(nome)) {
+        alert ('Nome já existe');
+        return;
+    }
+
     // Chamar a função validarNome
     if (validarNome(nome)) {
         listadeAmigos.push(nome);
@@ -47,6 +52,10 @@ function reiniciar() {
 }
 
 function sortear() {
+    if (listadeAmigos.length < 4) {
+        alert ('Adicione pelo menos quatro amigos!');
+        return;
+    }
     embaralha(listadeAmigos);
 
     let sorteio = document.getElementById('lista-sorteio');
