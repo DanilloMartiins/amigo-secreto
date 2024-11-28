@@ -4,7 +4,7 @@ function adicionar() {
     let amigo = document.getElementById('nome-amigo');
     let nome = amigo.value.trim(); // Remover espaços em branco
 
-    if (listadeAmigos.includes(nome)) {
+    if (listadeAmigos.includes(nome)) { // validação duplicata de nome
         alert ('Nome já existe');
         return;
     }
@@ -51,7 +51,7 @@ function reiniciar() {
     sorteio.innerHTML = '';
 }
 
-function sortear() {
+function sortear() {  // validação minimo de pessoas participando
     if (listadeAmigos.length < 4) {
         alert ('Adicione pelo menos quatro amigos!');
         return;
